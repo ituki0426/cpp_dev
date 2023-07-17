@@ -1,0 +1,1 @@
+//AtCoder ABC 264 D - "redocta".swap(i,i+1) (茶色, 400 点)

@@ -1,0 +1,1 @@
+//AtCoder ABC 303 D - Shift vs. CapsLock (茶色, 400 点)

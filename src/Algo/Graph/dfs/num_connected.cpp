@@ -1,0 +1,34 @@
+// 無向グラフの連結成分の個数
+#include <iostream>
+#include <vector>
+#define rep (i, n) for (int i = 0; i < n; i++)
+using namespace std;
+using Graph = vector<vector<int>>;
+
+vector<bool> seen;
+void dfs(const Graph &G, int v) {
+    seen[v] = true;
+    for (auto next_v : G[v]) {
+        if (seen[next_v]) continue;
+        dfs(G, next_v);
+    }
+}
+int main(void) {
+    int N, M;
+    cin >> N >> M;
+    Graph G(N);
+    for (int i = 0; i < M; i++) {
+        int a, b;
+        cin >> a >> b;
+        G[a].push_back(b);
+        G[b].push_back(a);
+    }
+    int count = 0;
+    seen.assign(N, false);
+    for (int v = 0; v < N; v++) {
+        if (seen[v]) continue;
+        dfs(G, v);
+        count++;
+    }
+    cout << count << endl;
+}
