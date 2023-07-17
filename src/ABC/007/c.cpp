@@ -1,4 +1,5 @@
 // 幅優先探索
+#include <atcoder/all>
 #include <iostream>
 #include <queue>
 #include <utility>
